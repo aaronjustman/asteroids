@@ -42,6 +42,11 @@ def main():
             if a.isColliding(player):
                 sys.exit("Game over!")
 
+            for s in shots:
+                if a.isColliding(s):
+                    s.kill()
+                    a.split()
+
         for d in drawables:
             d.draw(screen)
 
